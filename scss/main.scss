@@ -1,0 +1,125 @@
+@import "./materialize";
+
+//Vars
+
+$header-bg: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url(../img/header.png);
+$header-height: 300px;
+$landing-height: 500px;
+
+//Text Color Function
+
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return rgb(39, 39, 39);
+  } @else {
+    @return rgb(255, 255, 255);
+  }
+}
+
+body {
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+//Header
+
+.main-header {
+  background: $header-bg;
+  background-size: cover;
+  color: $primary-color;
+  height: $header-height;
+  margin-bottom: 30px;
+
+  h1 {
+    margin: 0;
+    padding: 30px;
+  }
+}
+
+.landing-header {
+  background: $header-bg;
+  background-size: cover;
+  color: $primary-color;
+  height: $landing-height;
+
+  h1 {
+    margin: 0;
+    padding: 30px;
+  }
+}
+
+.landingText {
+  font-size: 14pt;
+}
+
+//Main body
+
+.img-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+}
+
+.card-content {
+  span {
+    color: $primary-color;
+    letter-spacing: 3px;
+  }
+}
+
+//footer
+
+.page-footer {
+  background: $secondary-color;
+
+  .footer-copyright {
+    background: $secondary-color-light;
+  }
+}
+
+.row-1,
+.row-2,
+.row-3 {
+  opacity: 0;
+}
+
+.aboutBtn {
+  background: $primary-color;
+}
+
+.rowBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+}
+
+.projectBtn:hover {
+  background: $primary-color;
+}
+
+.mainLink {
+  color: $primary-color;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.landTitle {
+  color: rgb(82, 82, 82);
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+#listMas {
+  color: rgb(54, 54, 54);
+}
+
+@media only screen and (max-width: 480px) {
+  .rowBtns {
+    width: 100%;
+  }
+}
